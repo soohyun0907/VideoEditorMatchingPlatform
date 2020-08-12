@@ -12,5 +12,7 @@ public interface SearchService {
 	public List<PortfolioList> searchAll();
 	
 	public Portfolio search(int no);
+
+	public List<PortfolioList> searchRecommend();
 	
 }

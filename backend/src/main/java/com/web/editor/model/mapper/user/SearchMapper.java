@@ -31,5 +31,8 @@ public class SearchMapper {
 		return sqlSession.selectOne("search", uid);
 	}
 
+	public List<PortfolioList> searchRecommend() {
+		return null;
+	}
 
 }

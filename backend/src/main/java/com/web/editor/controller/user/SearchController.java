@@ -65,5 +65,36 @@ public class SearchController {
 		response = new ResponseEntity<>(result, HttpStatus.OK);
 		return response;
 	}
-	
+
+
+	@GetMapping("/recommend")
+	public Object recommend() {
+		ResponseEntity response = null;
+		final BasicResponse result = new BasicResponse();
+		List<PortfolioList> searhList = service.searchRecommend();
+		
+		if(!searhList.isEmpty()){
+			List<PortfolioTag> portfolioTags = new ArrayList<>();
+			List<PortfolioVideo> urls = new ArrayList<>();
+			List<BookmarkInfo> bookmarks = new ArrayList<>();
+			for (int i = 0; i < searhList.size(); i++) {
+				String uid = String.valueOf(searhList.get(i).getUid());
+				portfolioTags = portfolioService.findTagByUid(uid);
+				urls = portfolioService.findVideoByUid(uid);
+				bookmarks = bookmarkService.cntBookmarkByUid(uid);
+
+				searhList.get(i).setBookmarkCount(bookmarks.size());
+				searhList.get(i).setURLs(urls.stream().map(u -> u.getUrl()).collect(Collectors.toList()));
+				searhList.get(i).setTags(portfolioTags.stream().map(e -> e.getTagName()).collect(Collectors.toCollection(ArrayList::new)));
+			}
+			result.status = true;
+            result.data = "success";
+            result.object = searhList;
+		} else {
+			result.status = false;
+			result.data = "fail";
+		}
+		response = new ResponseEntity<>(result, HttpStatus.OK);
+		return response;
+	}
 }

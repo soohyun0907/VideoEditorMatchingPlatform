@@ -59,5 +59,15 @@ public class SearchServiceImpl implements SearchService{
 		}
 		return portfolio;
 	}
+
+	public List<PortfolioList> searchRecommend() {
+		List<PortfolioList> list = new ArrayList<>();
+		try {
+			return searchMapper.searchRecommend();
+		} catch (Exception e) {
+			// throw new SearchException("포트폴리오 조회 중 오류 발생");			
+		}
+		return list;
+	}
 		
 }
