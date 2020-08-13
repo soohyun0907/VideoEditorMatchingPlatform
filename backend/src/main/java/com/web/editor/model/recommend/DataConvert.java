@@ -28,7 +28,6 @@ public class DataConvert {
 
                   BufferedWriter bw = new BufferedWriter(new FileWriter("C:/Users/multicampus/Desktop/pjt3_2/src/main/resources/data/recommend.csv"));
 
-                 
 
                   String line;
 

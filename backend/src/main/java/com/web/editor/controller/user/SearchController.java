@@ -16,6 +16,7 @@ import com.web.editor.model.dto.user.PortfolioList;
 import com.web.editor.model.dto.user.PortfolioTag;
 import com.web.editor.model.dto.user.PortfolioVideo;
 import com.web.editor.model.dto.user.bookmark.BookmarkInfo;
+import com.web.editor.model.recommend.ItemRecommend;
 import com.web.editor.model.response.BasicResponse;
 import com.web.editor.model.service.user.BookmarkService;
 import com.web.editor.model.service.user.PortfolioService;
@@ -71,6 +72,7 @@ public class SearchController {
 	public Object recommend() {
 		ResponseEntity response = null;
 		final BasicResponse result = new BasicResponse();
+		ItemRecommend ir = new ItemRecommend();
 		List<PortfolioList> searhList = service.searchRecommend();
 		
 		if(!searhList.isEmpty()){
