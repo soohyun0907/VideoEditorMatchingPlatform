@@ -64,7 +64,7 @@ public class PortfolioVideoController {
         List<String> urlList = portfolioVideoRequest.getUrl();
         int size = urlList.size();
         for(int i=0; i<size;i++){
-            String[] temp = urlList.get(i).split("=");
+            String[] temp = urlList.get(i).split("=|&");
             String url = URL + temp[1];
             urlList.set(i, url);
         }
@@ -72,8 +72,7 @@ public class PortfolioVideoController {
 
         int res = -1;
         for(int i=0;i<size;i++){
-            res = portfolioService.videoSave(new PortfolioVideoSaveRequest(Integer.parseInt(uid), portfolioVideoRequest.getUrl().get(i),
-                                                                                portfolioVideoRequest.getMainFlag()));
+            res = portfolioService.videoSave(new PortfolioVideoSaveRequest(Integer.parseInt(uid), portfolioVideoRequest.getUrl().get(i), portfolioVideoRequest.getMainFlag()));
             if(res != -1){
                 result.status = true;
                 result.data = "success";
@@ -112,7 +111,7 @@ public class PortfolioVideoController {
         int size = urlList.size();
         String url = "";
         for(int i=0; i<size;i++){
-            temp = urlList.get(i).split("=");
+            temp = urlList.get(i).split("=|&");
             if(temp.length > 1){
                 url = URL + temp[1];
             } else {
@@ -123,8 +122,7 @@ public class PortfolioVideoController {
         portfolioVideoRequest.setUrl(urlList);
         
         for(int i=0;i<size;i++){
-            res = portfolioService.videoSave(new PortfolioVideoSaveRequest(Integer.parseInt(uid), portfolioVideoRequest.getUrl().get(i),
-                                                                                portfolioVideoRequest.getMainFlag()));
+            res = portfolioService.videoSave(new PortfolioVideoSaveRequest(Integer.parseInt(uid), portfolioVideoRequest.getUrl().get(i), portfolioVideoRequest.getMainFlag()));
             if(res != -1){
                 result.status = true;
                 result.data = "success";
