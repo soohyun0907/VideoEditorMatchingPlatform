@@ -36,10 +36,10 @@
                   <LazyYoutubeVideo v-if="editor.url" :src="editor.url" style="width: 100%;" />
                   <img
                     v-else
-                    src="/img/theme/empty.png"
+                    src="/img/theme/empty.PNG"
                     alt="영상없음"
                     style="width: 100%; border: 1px solid #555; height: 135px;"
-                  />
+                    />
                 </router-link>
               </div>
               <div class="col-9 pt-2 d-flex flex-column justify-content-around">
