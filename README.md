@@ -10,7 +10,7 @@
   - CF알고리즘을 통한 사용자 맞춤 편집자 추천
   - Redis를 이용하여 보다 빠른 검색결과 반환
   - 알람 페이지에 스케줄러 기능 제공
-- [프로젝트에 대한 자세한 소개](https://github.com/soohyun0907/Projects/blob/master/편집/wiki/home.md)
+- [프로젝트에 대한 자세한 소개](https://github.com/soohyun0907/VideoEditorMatchingPlatform/blob/master/wiki/home.md)
 - 화면 캡쳐 오른쪽 하단에 있는 화살표 표시는 원래는 한개이지만 캡쳐하면서 여러개가 캡쳐되었음.
 
 ## 메인페이지
