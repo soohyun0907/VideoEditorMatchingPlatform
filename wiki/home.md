@@ -50,9 +50,9 @@
 
 ## :building_construction: 아키텍처
 
-### Server & Client
+### SW 아키텍처
 
-### CI/CD
+<img width="1729" alt="SW아키텍처" src="https://user-images.githubusercontent.com/33771279/92923019-b85ff680-f471-11ea-9578-60e32ccc1513.png">
 
 ## :triangular_flag_on_post: 기능
 
